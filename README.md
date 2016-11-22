@@ -2,7 +2,7 @@
 
 ## Overview
 
-We'll cover what  `this.props.children` means in the context of a React component. 
+We'll cover what  `this.props.children` means in the context of a React component.
 
 ## Objectives
 
@@ -83,7 +83,7 @@ Now, let's assume for some reason that we need to pass down an extra prop to our
 export default class MovieBrowser extends React.Component {
   render() {
     const currentPlayingTitle = 'Mad Max: Fury Road';
-    
+
     return (
       <div className="movie-browser">
         {this.props.children}
@@ -104,7 +104,7 @@ export default class MovieBrowser extends React.Component {
         isPlaying: child.props.title === currentPlayingTitle
       });
     });
-    
+
     return (
       <div className="movie-browser">
         {childrenWithExtraProp}
@@ -124,10 +124,10 @@ export default class SomeComponent extends React.Component {
   render() {
     const childrenWithWrapperDiv = React.Children.map(this.props.children, child => {
       return (
-        <div className="some-component-special-class">{child}</div> 
+        <div className="some-component-special-class">{child}</div>
       );
     });
-    
+
     return (
       <div className="some-component">
         <p>This component has {React.Children.count(this.props.children)} children.</p>
@@ -136,7 +136,7 @@ export default class SomeComponent extends React.Component {
     );
   }
 }
-```
+``` 
 
 ## Resources
 - [Explanation on Children](https://facebook.github.io/react/docs/multiple-components.html#children)
